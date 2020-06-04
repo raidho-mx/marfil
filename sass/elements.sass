@@ -1,0 +1,566 @@
+/* ELEMENTS */
+
+// SECTION
+section
+	position: relative
+	width: 100%
+
+footer
+	color: $c-white
+	width: 100%
+	.has-logo img
+		max-width: 130px
+		width: 100%
+
+// HEADER
+header
+	background-color: $c-dark-gray
+	@include transition(all ease 0.6s)
+	width: 100%
+	position: fixed
+	top: 0
+	z-index: 4
+	.has-logo
+		img
+			max-width: 284px
+			width: 100%
+		@media (max-width: $phone_b)
+			img
+				max-width: 174px
+	a
+		color: $c-white
+		text-decoration: none
+		@include transition(all ease 0.2s)
+	a:hover
+		color: $c-white
+		@include transition(all ease 0.2s)
+	.has-menu
+		li
+			list-style: none
+			white-space: nowrap
+
+// MOBILE ASIDE NAV
+#triggerMenu
+	cursor: pointer
+
+.hero-nav
+	position: fixed
+	height: 100vh
+	width: 100%
+	top: -100vh
+	left: 0
+	@include transition (all ease 0.5s)
+	z-index: 3
+	#hero-menu li
+		margin-bottom: 15px
+	#hero-menu li:last-child
+		margin-bottom: 0px
+	.has-menu a
+		font-size: 24px
+	.has-menu .has-icon:before
+		display: inline-block
+		position: relative
+		margin-right: 10px
+
+.hero-nav.show
+	@include transition (all ease 0.5s)
+	position: fixed
+	top: 0
+
+.html-overflow-active
+	height: 100%
+
+.overflow-active
+	-webkit-overflow-scrolling: touch
+	/* -webkit-overflow-scrolling: auto !important; */
+	overflow: hidden
+	left: 0
+	position: fixed
+	height: 100%
+	top: 0
+	width: 100%
+
+.aside-overflow-active
+	top: 50px
+	position: relative
+
+// MASKS
+.cursor-pointer
+	cursor: pointer
+
+.dark-blue-mask
+	background: rgba(0,44,102,0.7)!important
+
+.dark-mask
+	background: rgba(0,0,0,0.7)
+	pointer-events: none
+	top: 0
+	position: absolute
+	height: 100%
+	width: 100%
+
+// SLIDERS
+.has-slider
+	position: relative
+	z-index: 0
+	.slick-slide
+		display: inline-block
+		vertical-align: top
+	.slick-list
+		overflow: hidden
+	.slider__counter
+		font-family: 'NTDapper-Regular'
+		color: white
+		width: 122px
+		left: 62px
+		position: absolute
+		font-size: 14px
+		text-align: center
+		bottom: 0px
+		@media (max-width: $tablet_b)
+			left: 49px
+	.slick-dots
+		text-align: center
+		margin-top: 50px
+		li
+			+border-radius(100%)
+			background-color: #D8D8D8
+			display: inline-block
+			color: rgba(0,0,0,0)
+			margin-right: 15px
+			height: 13px
+			width: 13px
+			overflow: hidden
+		li:last-child
+			margin-right: 0
+		li button
+			@include appearance(none)
+			+border-radius(100%)
+			background: none
+			border: none
+			color: rgba(0,0,0,0)
+			display: inline-block
+			height: 100%!important
+			width: 100%!important
+		li.slick-active
+			background-color: #4A4A4A
+	@media (max-width: $phone_b)
+		margin-bottom: 50px
+		.slider__counter
+			left: 0
+			right: 0
+			margin: 0 auto
+			bottom: -43px
+
+.has-white-arrows
+	.slick-arrow
+		@include appearance(none)
+		cursor: pointer
+		background: transparent
+		color: transparent
+		border: none
+		position: absolute
+		bottom: 0
+		height: 20px
+		width: 40px
+		z-index: 5
+	.slick-prev
+		left: 0px
+		&:after
+			content: url('../img/slider-arrow-left.svg')
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+		@media (min-width: $tablet_b)
+			left: 28px
+	.slick-next
+		left: 180px
+		&:after
+			content: url('../img/slider-arrow-right.svg')
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+	@media (max-width: $phone_b)
+		.slick-arrow
+			bottom: -43px
+		.slick-next
+			right: 0
+			left: inherit
+
+.has-blue-arrows
+	margin-bottom: 0!important
+	.slick-list
+		overflow: visible
+	.slick-dots
+		display: none!important
+	.slick-arrow
+		cursor: pointer
+		@include appearance(none)
+		background: transparent
+		color: transparent
+		border: none
+		position: absolute
+		bottom: 0px
+		height: 20px
+		width: 40px
+		z-index: 5
+	.slick-prev
+		left: 44%
+		&:after
+			content: url('../img/slider-arrow-left-blue.svg')
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+	.slick-next
+		left: 55%
+		&:after
+			content: url('../img/slider-arrow-right-blue.svg')
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+	@media (max-width: $phone_b)
+		.slick-arrow
+			display: none!important
+		.slick-dots
+			display: block!important
+
+.slider-img
+	width: 100%
+	.slick-list
+		@include box-shadow (0 4px 20px 0 rgba(0,0,0,0.2))
+		+border-radius(8px)
+		img
+			+border-radius(8px)
+
+.cards-slider
+	.slick-list
+		overflow: inherit
+	.slick-slide
+		max-width: 294px
+		width: 100%
+	.card-x2
+		min-height: 464px
+	.info-btn
+		position: absolute
+		bottom: 0
+		left: inherit
+		right: 120px
+	@media (max-width: $tablet_b)
+		.card-x2
+			min-height: auto
+
+.hero-slider
+	img
+		width: 100%
+	.info-btn
+		span
+			position: relative
+			right: -5px
+	.has-txt
+		position: absolute
+		text-align: left
+		transform-origin: bottom
+		margin-top: 18%
+		right: -140px
+		+transform(rotate(-90deg))
+		@media (max-width: $med_b)
+			a
+				font-size: 14px
+
+.i-btn
+	cursor: pointer
+	width: 18px
+	height: 18px
+	border: 1px solid $c-dark-gray
+	+border-radius(15px)
+	font-size: 12px
+	text-align: center
+	position: relative
+	line-height: 16.5px
+	.has-txt
+		background: $c-dark-gray
+		color: $c-white
+		opacity: 0
+		pointer-events: none
+		position: absolute
+		top: 43px
+		left: -78px
+		padding: 10px
+		+transition(all ease 0.5s)
+		width: 170px
+		&:after
+			content: ''
+			content: url('../img/icon-dropdown-arrow-blue.svg')
+			height: 20px
+			width: 29px
+			position: absolute
+			@include transition(all ease 0.3s)
+			top: -14px
+			left: 72px
+	&:hover
+		.has-txt
+			opacity: 1
+			+transition(all ease 0.5s)
+	@media (max-width: $phone_b)
+		border: 1px solid $c-dark-gray
+		color: $c-dark-gray
+
+//THUMBNAIL IMAGES
+.img-thumb-50
+	+bg-img
+	min-height: 430px
+	@media (max-width: $phone_b)
+		min-height: 250px
+
+.img-card-square
+	+bg-img
+	padding-bottom: 100%
+	width: 100%
+
+.img-card-rectangle
+	+bg-img
+	padding-bottom: 60%
+	width: 100%
+
+.vh-80
+	height: 80vh
+
+.hero-img-800
+	+bg-img
+	height: 800px
+	width: 100%
+	.has-txt
+		width: 80%
+	@media (max-width: 1360px)
+		.has-txt
+			width: 100%
+	@media (max-width: $phone_b)
+		top: -1px
+		padding-top: 50px
+		padding-bottom: 50px
+		height: auto
+		min-height: 230px
+		.has-txt
+			width: 100%
+
+.hero-img
+	+bg-img
+	height: 500px
+	width: 100%
+	.has-txt
+		width: 80%
+	@media (max-width: 1360px)
+		.has-txt
+			width: 100%
+	@media (max-width: $phone_b)
+		top: -1px
+		padding-top: 50px
+		padding-bottom: 50px
+		height: auto
+		min-height: 230px
+		.has-txt
+			width: 100%
+
+
+// TABS
+.tab-menu
+	li
+		margin-right: 40px
+	li:last-child
+		margin-right: 0
+	li a.active
+		color: $c-green
+		text-decoration: underline
+
+.tab-content
+	width: 100%
+
+.has-icon
+	position: relative
+	&:before
+		content: url('../img/icon-phone.svg')
+		background-repeat: no-repeat
+		background-size: contain
+		left: 0
+		top: 1px
+		position: absolute
+
+.has-bleed-txt
+	position: relative
+	padding-left: 60px
+	img
+		position: absolute
+		top: 6px
+		left: 0px
+	@media (max-width: $tablet_b)
+		padding-left: 55px
+		img
+			max-width: 30px
+
+.has-bleed-txt-sm
+	position: relative
+	padding-left: 30px
+	img
+		position: absolute
+		top: 8px
+		left: 0px
+
+.has-bleed-txt-center
+	position: relative
+	img
+		position: relative
+		display: inline-block
+		top: 8px
+		margin-right: 20px
+
+.has-arrow-down.collapsed
+	&:after
+		content: url('../img/icon-arrow-up.svg')
+		+transform(rotate(180deg))
+		right: 20px
+		position: absolute
+
+.has-arrow-down
+	&:after
+		content: url('../img/icon-arrow-up.svg')
+		+transform(rotate(0deg))
+		right: 20px
+		position: absolute
+
+.cir-x1
+	width: 84%
+	padding-bottom: 84%
+	@media (max-width: $tablet_b)
+		width: 100%
+		padding-bottom: 100%
+
+.cir-x2
+	width: 100%
+	padding-bottom: 100%
+	.c-center
+		position: absolute
+		top: 33%
+		left: 0
+		right: 0
+	@media (max-width: $tablet_b)
+		.c-center
+			top: 36%
+
+.cir-30x30
+	display: inline-block
+	+border-radius(100%)
+	height: 30px
+	text-align: center
+	font-size: 18px
+	line-height: 29px
+	font-family: 'NTDapper-Bold'
+	width: 30px
+
+.has-motion
+	@include transition-duration(0.2s)
+	&:hover
+		+transform(translateY(-0.4rem))
+
+
+// ANIMATIONS
+
+.has-fade
+	opacity: 0
+	@include transition(all ease 0.6s)
+	&:nth-child(-n+4)
+		opacity: 1
+
+.fade-in
+	opacity: 0
+	top: 60px
+	position: relative
+	+transition(all ease 0.6s)
+
+.fade-in.show
+	opacity: 1
+	top: 0
+	position: relative
+	+transition(all ease 0.6s)
+
+@keyframes dash
+	to
+		stroke-dashoffset: 0
+
+@keyframes show
+	to
+		opacity: 1
+
+@keyframes moveTop
+	to
+		opacity: 1
+
+@keyframes moveTopShow
+	to
+		top: 0
+		opacity: 1
+
+@keyframes showLeft
+	to
+		opacity: 1
+		left: 0
+
+@keyframes showRight
+	to
+		opacity: 1
+		right: 0
+
+.fade-in.show.delay1
+	animation: moveTopShow 0.4s ease-out forwards
+	opacity: 0
+	top: 50px
+	animation-delay: 0.1s
+
+.fade-in.show.delay2
+	animation: moveTopShow 0.4s ease-out forwards
+	opacity: 0
+	top: 50px
+	animation-delay: 0.3s
+
+.fade-in.show.delay3
+	animation: moveTopShow 0.4s ease-out forwards
+	opacity: 0
+	top: 50px
+	animation-delay: 0.5s
+
+.fade-in.show.delay4
+	animation: moveTopShow 0.4s ease-out forwards
+	opacity: 0
+	top: 50px
+	animation-delay: 0.7s
+
+.fade-in.show.delay5
+	animation: moveTopShow 0.4s ease-out forwards
+	opacity: 0
+	top: 50px
+	animation-delay: 0.9s
+
+// MAIN BLOCKS ANIMATIONS
+
+.fade-in-static-x1
+	animation: show 0.4s ease-out forwards
+	opacity: 0
+
+.fade-in-static
+	animation: show 0.8s ease-out forwards
+	opacity: 0
+
+.fade-left-right
+	animation: showLeft 0.7s ease-out forwards
+	opacity: 0
+	position: relative
+	left: -80px
+
+.fade-right-left
+	animation: showRight 0.7s ease-out forwards
+	opacity: 0
+	position: relative
+	right: -80px

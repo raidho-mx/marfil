@@ -1,0 +1,116 @@
+/*GRID*/
+
+.container
+	width: 100%
+	padding-right: 30px
+	padding-left: 30px
+
+@media (min-width: 768px)
+	.container
+		max-width: 1100px
+
+@media (min-width: 992px)
+	.container
+		max-width: 1200px
+
+@media (min-width: 1200px)
+	.container
+		max-width: 1240px
+
+@media (min-width: 1440px)
+	.container
+		max-width: 1300px
+
+.pt-100
+	padding-top: 100px
+	@media (max-width: $phone_b)
+		padding-top: 40px
+
+.pt-sm-100
+	padding-top: 100px
+	@media (max-width: $phone_b)
+		padding-top: 0
+
+.pt100
+	padding-top: 100px
+
+.pb-100
+	padding-bottom: 100px
+	@media (max-width: $phone_b)
+		padding-bottom: 40px
+
+.ovr-hidden
+	overflow: hidden
+
+.word-break
+	word-break: break-all
+
+.z-index-2
+	z-index: 2
+
+.max-w-840
+	max-width: 840px
+
+.max-w-760
+	max-width: 760px
+
+.max-w-110
+	max-width: 110px
+
+.w-200
+	width: 200px!important
+
+img.max-w-110
+	max-width: 110px
+	width: 100%
+
+img.max-w-80
+	max-width: 80px
+	width: 100%
+
+.table td, .table th
+	border: none!important
+
+.col-2dot4, .col-sm-2dot4, .col-md-2dot4, .col-lg-2dot4, .col-xl-2dot4
+	position: relative
+	width: 100%
+	min-height: 1px
+	padding-right: 15px
+	padding-left: 15px
+
+.col-2dot4
+	-webkit-box-flex: 0
+	-ms-flex: 0 0 20%
+	flex: 0 0 20%
+	max-width: 20%
+
+@media (min-width: 540px)
+	.col-sm-2dot4
+		-webkit-box-flex: 0
+		-ms-flex: 0 0 20%
+		flex: 0 0 20%
+		max-width: 20%
+@media (min-width: 768px)
+	.col-md-2dot4
+		-webkit-box-flex: 0
+		-ms-flex: 0 0 20%
+		flex: 0 0 20%
+		max-width: 20%
+@media (min-width: 960px)
+	.col-lg-2dot4
+		-webkit-box-flex: 0
+		-ms-flex: 0 0 20%
+		flex: 0 0 20%
+		max-width: 20%
+@media (min-width: 1140px)
+	.col-xl-2dot4
+		-webkit-box-flex: 0
+		-ms-flex: 0 0 20%
+		flex: 0 0 20%
+		max-width: 20%
+
+// EXTRA
+.has-disc-list
+	padding-left: 22px
+	li
+		list-style-type: disc

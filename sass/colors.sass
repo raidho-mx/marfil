@@ -1,0 +1,98 @@
+// BG COLORS
+.bg-0
+	background: none
+
+.bg-white-opacity
+	background-color: rgba(255,255, 255,0.9)
+
+.bg-black
+	background-color: $c-black
+
+.bg-white
+	background-color: $c-white
+
+.bg-gray
+	background-color: $c-gray
+
+.bg-dark-gray
+	background-color: $c-dark-gray
+
+.bg-light-gray
+	background-color: $c-light-gray
+
+.bg-green
+	background-color: $c-green
+
+.bg-orange
+	background-color: $c-orange
+
+// COLORS
+.c-black
+	color: $c-black
+	a, &:hover
+		color: $c-black
+
+.c-white
+	color: $c-white
+	a, &:hover
+		color: $c-white
+
+.c-dark-gray
+	color: $c-dark-gray
+	a, &:hover
+		color: $c-dark-gray
+
+.c-gray
+	color: $c-gray
+	a, &:hover
+		color: $c-gray
+
+.c-light-gray
+	color: $c-light-gray
+	a, &:hover
+		color: $c-light-gray
+
+.c-green
+	color: $c-green
+	a, &:hover
+		color: $c-green
+
+.c-orange
+	color: $c-orange
+	a, &:hover
+		color: $c-orange
+
+
+// BORDERS
+.border-12px
+	+border-radius(12px)
+
+.border-14px
+	+border-radius(14px)
+
+.border-15px
+	+border-radius(15px)
+
+.border-bottom-light-gray
+	border-bottom: 2px solid $c-light-gray
+
+.border-bottom-white
+	border-bottom: 2px solid $c-white
+
+.border-md-top-white
+	border-top: 2px solid $c-white
+	@media (max-width: $phone_b)
+		border-top: none
+
+// MASKS - GRADIENTS
+.mask-gradient-dark-gray
+	background: linear-gradient(0deg, $c-dark-gray 5%, rgba(0,0,0,0) 85%)
+	width: 100%
+	pointer-events: none
+	height: 100%
+	top: 0%
+	left: 0
+	position: absolute
+
+.bg-gradient-dark-gray
+	background: linear-gradient(0deg, $c-dark-gray 10%, $c-white 70%)
