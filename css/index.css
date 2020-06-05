@@ -3,20 +3,20 @@
 /*  BASE  */
 /* SETUP */
 @font-face {
-  font-family: "NTDapper-Black";
-  src: url("../fonts/NTDapper-Black.otf"), url("../fonts/NTDapper-Black.eot") format("embedded-opentype"), url("../fonts/NTDapper-Black.woff") format("woff"), url("../fonts/NTDapper-Black.ttf") format("truetype"), url("../fonts/NTDapper-Black.svg") format("svg");
+  font-family: "MonospaceBT-Roman";
+  src: url("../fonts/Monospace821BT-Roman.ttf") format("truetype"), url("../fonts/Monospace821BT-Roman.eot") format("embedded-opentype"), url("../fonts/Monospace821BT-Roman.woff") format("woff"), url("../fonts/Monospace821BT-Roman.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "NTDapper-Bold";
-  src: url("../fonts/NTDapper-Bold.otf"), url("../fonts/NTDapper-Bold.eot") format("embedded-opentype"), url("../fonts/NTDapper-Bold.woff") format("woff"), url("../fonts/NTDapper-Bold.ttf") format("truetype"), url("../fonts/NTDapper-Bold.svg") format("svg");
+  font-family: "MonospaceBT-Bold";
+  src: url("../fonts/Monospace821BT-Bold.ttf") format("truetype"), url("../fonts/Monospace821BT-Bold.eot") format("embedded-opentype"), url("../fonts/Monospace821BT-Bold.woff") format("woff"), url("../fonts/Monospace821BT-Bold.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "NTDapper-Regular";
-  src: url("../fonts/NTDapper-Regular.otf"), url("../fonts/NTDapper-Regular.eot") format("embedded-opentype"), url("../fonts/NTDapper-Regular.woff") format("woff"), url("../fonts/NTDapper-Regular.ttf") format("truetype"), url("../fonts/NTDapper-Regular.svg") format("svg");
+  font-family: "MonospaceBT-Italic";
+  src: url("../fonts/Monospace821BT-Italic.ttf") format("truetype"), url("../fonts/Monospace821BT-Italic.eot") format("embedded-opentype"), url("../fonts/Monospace821BT-Italic.woff") format("woff"), url("../fonts/Monospace821BT-Italic.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -27,7 +27,7 @@ html, body {
 body {
   color: #000000;
   background-color: #FFFFFF;
-  font-family: "NTDapper-Regular";
+  font-family: "MonospaceBT-Roman";
   font-size: 18px;
   line-height: 21px;
   position: relative;
@@ -42,11 +42,7 @@ a:hover {
 }
 
 b, strong, .is-bold {
-  font-family: "NTDapper-Bold", sans-serif;
-}
-
-.is-black {
-  font-family: "NTDapper-Black", sans-serif;
+  font-family: "MonospaceBT-Bold", sans-serif;
 }
 
 img {
@@ -284,7 +280,7 @@ img {
 }
 
 .has-content b, .has-content strong {
-  font-family: "NTDapper-Bold";
+  font-family: "MonospaceBT-Bold";
 }
 .has-content a {
   color: #587458;
@@ -398,7 +394,7 @@ img {
   display: inline-block;
   text-align: center;
   font-size: 18px;
-  font-family: "NTDapper-Bold";
+  font-family: "MonospaceBT-Bold";
   min-width: 160px;
   padding: 17px 50px;
   text-decoration: none;
@@ -473,7 +469,7 @@ input[type=number] {
   color: #000000;
   border-radius: 5px;
   background-color: #FFFFFF;
-  font-family: "NTDapper-Bold";
+  font-family: "MonospaceBT-Bold";
   border: none;
   padding: 29px 25px;
   height: 60px;
@@ -509,7 +505,7 @@ select {
   color: #000000;
   border-radius: 5px !important;
   background-color: #FFFFFF;
-  font-family: "NTDapper-Bold";
+  font-family: "MonospaceBT-Bold";
   border: none !important;
   padding: 16px 25px !important;
   font-size: 18px;
@@ -536,7 +532,7 @@ input[type=submit] {
   border: none !important;
   cursor: pointer;
   color: #FFFFFF;
-  font-family: "NTDapper-Bold";
+  font-family: "MonospaceBT-Bold";
   font-size: 18px;
   line-height: 0;
   padding: 28px 50px;
@@ -1156,7 +1152,7 @@ header .has-menu li {
   overflow: hidden;
 }
 .has-slider .slider__counter {
-  font-family: "NTDapper-Regular";
+  font-family: "MonospaceBT-Roman";
   color: white;
   width: 122px;
   left: 62px;
@@ -1637,7 +1633,7 @@ header .has-menu li {
   text-align: center;
   font-size: 18px;
   line-height: 29px;
-  font-family: "NTDapper-Bold";
+  font-family: "MonospaceBT-Bold";
   width: 30px;
 }
 
