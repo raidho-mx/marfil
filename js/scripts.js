@@ -3,6 +3,7 @@
 		$('.animated-icon1').toggleClass('open');
 	});
 
+
 // WINDOW SIZE
 	var header = $('header').outerHeight();
 	$('.hero-nav').css({'padding-top' : header}); // padding-top para el hero-nav
@@ -15,6 +16,7 @@
 	});
 
 	$('.homesvg').addClass('show');
+
 
 // ON SCROLL
 	$(window).scroll(function() {
@@ -107,7 +109,6 @@
 		$('.fade-in').addClass('show');
 	}
 
-//
 	var numbers2ID = $('#numbers2');
 	if (numbers2ID.length) {
 		//var numbers2 = $('#numbers2').offset().top - 500;
@@ -126,6 +127,7 @@
 		$('.numeros').removeClass('count');
 		$('.fade-in').addClass('show');
 	}
+
 
 // HERO MENU
 	$(".triggerMenu").click(function(event) {
@@ -159,6 +161,79 @@
 		$("#orange-menu").removeClass("show");
 	});
 
+
+// IF GET PAGE, PAINT  BLUE MENU
+	var pathname = window.location.href;
+	var url = pathname.substring(0, pathname.lastIndexOf('/'));
+
+	var inversion = url + '/inversion.php';
+	var credito = url + '/credito.php';
+	var conocenos = url + '/conocenos.php';
+	var blog = url + '/blog.php';
+
+	switch(pathname) {
+		case inversion :
+			$(".has-menu li:nth-child(1) > a").addClass('c-blue');
+			break;
+		case credito :
+			$(".has-menu li:nth-child(2) > a").addClass('c-blue');
+			break;
+		case conocenos :
+			$(".has-menu li:nth-child(3) > a").addClass('c-blue');
+			break;
+		case blog :
+			$(".has-menu li:nth-child(4) > a").addClass('c-blue');
+			break;
+	}
+
+
+// BOOTSTRAP FORMS
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	'use strict';
+	window.addEventListener('load', function() {
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.getElementsByClassName('needs-validation');
+		// Loop over them and prevent submission
+		var validation = Array.prototype.filter.call(forms, function(form) {
+			form.addEventListener('submit', function(event) {
+				if (form.checkValidity() === false) {
+					event.preventDefault();
+					event.stopPropagation();
+				}
+				form.classList.add('was-validated');
+			}, false);
+		});
+	}, false);
+	})();
+
+
+// DYNAMIC BACKGROUND COLOR SCRIPT
+// Credits: https://codepen.io/DevillersJerome/pen/bpLPGe
+adaptColor('.inline-color-script');
+
+function adaptColor(selector) {
+	var rgb = $(selector).css("background-color");
+
+	if (rgb.match(/^rgb/)) {
+		var a = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/),
+			r = a[1],
+			g = a[2],
+			b = a[3];
+	}
+	var hsp = Math.sqrt(
+		0.299 * (r * r) +
+		0.587 * (g * g) +
+		0.114 * (b * b)
+	);
+	if (hsp > 127.5) {
+		$(selector).addClass('dark-color');
+	} else {
+		$(selector).addClass('light-color');
+	}
+};
+
+
 // HOME HERO SLIDER SLIDER
 	$('.slider-img').slick({
 		infinite: true,
@@ -170,34 +245,6 @@
 		adaptiveHeight: true
 	});
 
-
-// VIDEOS SLIDER
-	var $slider = $('.slider-video');
-	if ($slider.length) {
-		var currentSlide;
-		var slidesCount;
-		var sliderCounter = document.createElement('div');
-		sliderCounter.classList.add('slider__counter');
-
-		var updateSliderCounter = function(slick, currentIndex) {
-			currentSlide = slick.slickCurrentSlide() + 1;
-			slidesCount = slick.slideCount;
-			$(sliderCounter).html(currentSlide + ' / <span class="c-light-gray">' + slidesCount + '</span>');
-		};
-
-		$slider.on('init', function(event, slick) {
-			$slider.append(sliderCounter);
-			updateSliderCounter(slick);
-			$(sliderCounter).html('1 / <span class="c-light-gray">1</span>');
-
-		});
-
-		$slider.on('afterChange', function(event, slick, currentSlide) {
-			updateSliderCounter(slick, currentSlide);
-		});
-
-		$slider.slick();
-	}
 
 // POSTS SLIDER
 	var $sliderPosts = $('.slider-posts');
@@ -226,6 +273,7 @@
 
 		$sliderPosts.slick();
 	}
+
 
 // SLIDER POSTS
 	var $status = $('.custom_paging');
@@ -278,48 +326,3 @@
 			},
 		]
 	});
-
-
-// IF GET PAGE, PAINT  BLUE MENU
-	var pathname = window.location.href;
-	var url = pathname.substring(0, pathname.lastIndexOf('/'));
-
-	var inversion = url + '/inversion.php';
-	var credito = url + '/credito.php';
-	var conocenos = url + '/conocenos.php';
-	var blog = url + '/blog.php';
-
-	switch(pathname) {
-		case inversion :
-			$(".has-menu li:nth-child(1) > a").addClass('c-blue');
-			break;
-		case credito :
-			$(".has-menu li:nth-child(2) > a").addClass('c-blue');
-			break;
-		case conocenos :
-			$(".has-menu li:nth-child(3) > a").addClass('c-blue');
-			break;
-		case blog :
-			$(".has-menu li:nth-child(4) > a").addClass('c-blue');
-			break;
-	}
-
-// BOOTSTRAP FORMS
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-	(function() {
-	'use strict';
-	window.addEventListener('load', function() {
-		// Fetch all the forms we want to apply custom Bootstrap validation styles to
-		var forms = document.getElementsByClassName('needs-validation');
-		// Loop over them and prevent submission
-		var validation = Array.prototype.filter.call(forms, function(form) {
-			form.addEventListener('submit', function(event) {
-				if (form.checkValidity() === false) {
-					event.preventDefault();
-					event.stopPropagation();
-				}
-				form.classList.add('was-validated');
-			}, false);
-		});
-	}, false);
-	})();

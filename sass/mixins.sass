@@ -66,3 +66,41 @@
 	-webkit-box-shadow: $value
 	-moz-box-shadow: $value
 	box-shadow: $value
+
+@function set-notification-text-color($color)
+	@if (lightness($color) > 50)
+		@return #000000
+	@else
+		@return #ffffff
+
+$notification-confirm: hsla(101, 72%, 37%, 1)
+$notification-warning: #ffc53a
+$notification-alert: rgb(172, 34, 34)
+
+%notification
+	border-radius: 10px
+	display: block
+	font-size: 1.5em
+	font-family: sans-serif
+	padding: 1em 2em
+	margin: 1em auto
+	width: 30%
+	text-align: center
+
+.notification
+	@extend %notification
+
+.notification-confirm
+	background: $notification-confirm
+	color: set-notification-text-color($notification-confirm)
+
+.notification-warning
+	background: $notification-warning
+	color: set-notification-text-color($notification-warning)
+
+.notification-alert
+	background: $notification-alert
+	color: set-notification-text-color($notification-alert)
+
+.responsive-color
+	color: set-notification-text-color($notification-alert)

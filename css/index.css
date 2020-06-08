@@ -1,6 +1,36 @@
 @charset "UTF-8";
 /* STYLE INDEX*/
 /*  BASE  */
+.notification {
+  border-radius: 10px;
+  display: block;
+  font-size: 1.5em;
+  font-family: sans-serif;
+  padding: 1em 2em;
+  margin: 1em auto;
+  width: 30%;
+  text-align: center;
+}
+
+.notification-confirm {
+  background: #45a21a;
+  color: #ffffff;
+}
+
+.notification-warning {
+  background: #ffc53a;
+  color: #000000;
+}
+
+.notification-alert {
+  background: #ac2222;
+  color: #ffffff;
+}
+
+.responsive-color {
+  color: #ffffff;
+}
+
 /* SETUP */
 @font-face {
   font-family: "MonospaceBT-Roman";
@@ -405,7 +435,6 @@ img {
   transition: all ease 0.3s;
 }
 .has-btn:hover {
-  color: #FFFFFF;
   text-decoration: none;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -846,6 +875,14 @@ input[type=submit]:focus, input[type=submit]:hover {
 
 .bg-gradient-dark-gray {
   background: linear-gradient(0deg, #262626 10%, #FFFFFF 70%);
+}
+
+.dark-color {
+  color: black;
+}
+
+.light-color {
+  color: white;
 }
 
 /*GRID*/
@@ -1650,40 +1687,6 @@ header .has-menu li {
   transform: translateY(-0.4rem);
 }
 
-.has-fade {
-  opacity: 0;
-  -webkit-transition: all ease 0.6s;
-  -moz-transition: all ease 0.6s;
-  -ms-transition: all ease 0.6s;
-  -o-transition: all ease 0.6s;
-  transition: all ease 0.6s;
-}
-.has-fade:nth-child(-n+4) {
-  opacity: 1;
-}
-
-.fade-in {
-  opacity: 0;
-  top: 60px;
-  position: relative;
-  -webkit-transition: all ease 0.6s;
-  -moz-transition: all ease 0.6s;
-  -ms-transition: all ease 0.6s;
-  -o-transition: all ease 0.6s;
-  transition: all ease 0.6s;
-}
-
-.fade-in.show {
-  opacity: 1;
-  top: 0;
-  position: relative;
-  -webkit-transition: all ease 0.6s;
-  -moz-transition: all ease 0.6s;
-  -ms-transition: all ease 0.6s;
-  -o-transition: all ease 0.6s;
-  transition: all ease 0.6s;
-}
-
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
@@ -1753,7 +1756,7 @@ header .has-menu li {
 }
 
 .fade-in-static-x1 {
-  animation: show 0.4s ease-out forwards;
+  animation: show 0.2s ease-out forwards;
   opacity: 0;
 }
 
