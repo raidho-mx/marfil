@@ -22,111 +22,13 @@
 	$(window).scroll(function() {
 		var top = $(window).scrollTop();
 		// SAVE ID'S
-		var homeID = $('#home-animation');
-		var numbersID = $('#numbers');
+		var animation = $('.animation').offset().top - 200;;
 
-
-		if (homeID.length) {
-		var homeSvg = $('#home-animation').offset().top - 400;
-			if (top > homeSvg) {
-				$('.homesvg').attr("class", "homesvg show");
-				$('.fade-in').addClass('show');
-			}
-		}
-
-		if (numbersID.length) {
-			var numbers = $('#numbers').offset().top - 500;
-			if (top > numbers) {
-				$('.count').each(function() {
-				  var $this = $(this),
-					countTo = $this.attr('data-count');
-
-				  $({
-					countNum: $this.text()
-				  }).animate({
-					  countNum: countTo
-					},
-
-					{
-					  duration: 2000,
-					  easing: 'linear',
-					  step: function() {
-						$this.text(commaSeparateNumber(Math.floor(this.countNum)));
-					  },
-					  complete: function() {
-						$this.text(commaSeparateNumber(this.countNum));
-						//alert('finished');
-					  }
-					}
-				  );
-
-				});
-
-				function commaSeparateNumber(val) {
-				  while (/(\d+)(\d{3})/.test(val.toString())) {
-					val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
-				  }
-				  return val;
-				}
-
-				$('.numeros').removeClass('count');
-				$('.fade-in').addClass('show');
-			}
+		if (top > animation) {
+			$('.fade-in').addClass('show');
 		}
 	});
 
-	var numbers3ID = $('#numbers3');
-	if (numbers3ID.length) {
-		$('.count').each(function() {
-			var $this = $(this),
-			countTo = $this.attr('data-count');
-			$({
-				countNum: $this.text()
-			}).animate({
-				countNum: countTo
-				},{
-					duration: 2300,
-					easing: 'linear',
-					step: function() {
-						$this.text(commaSeparateNumber(Math.floor(this.countNum)));
-					},
-					complete: function() {
-						$this.text(commaSeparateNumber(this.countNum));
-						//alert('finished');
-					}
-				}
-			);
-		});
-
-		function commaSeparateNumber(val) {
-			while (/(\d+)(\d{3})/.test(val.toString())) {
-				val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
-			}
-			return val;
-		}
-
-		$('.numeros').removeClass('count');
-		$('.fade-in').addClass('show');
-	}
-
-	var numbers2ID = $('#numbers2');
-	if (numbers2ID.length) {
-		//var numbers2 = $('#numbers2').offset().top - 500;
-		$('.count').each(function () {
-			$(this).prop('Counter',0).animate({
-				Counter: $(this).text()
-			}, {
-				duration: 1400,
-				easing: 'swing',
-				step: function (now) {
-					$(this).text(Math.ceil(now));
-				}
-			});
-		});
-
-		$('.numeros').removeClass('count');
-		$('.fade-in').addClass('show');
-	}
 
 
 // HERO MENU
@@ -210,28 +112,28 @@
 
 // DYNAMIC BACKGROUND COLOR SCRIPT
 // Credits: https://codepen.io/DevillersJerome/pen/bpLPGe
-adaptColor('.inline-color-script');
+	adaptColor('.inline-color-script');
 
-function adaptColor(selector) {
-	var rgb = $(selector).css("background-color");
+	function adaptColor(selector) {
+		var rgb = $(selector).css("background-color");
 
-	if (rgb.match(/^rgb/)) {
-		var a = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/),
-			r = a[1],
-			g = a[2],
-			b = a[3];
-	}
-	var hsp = Math.sqrt(
-		0.299 * (r * r) +
-		0.587 * (g * g) +
-		0.114 * (b * b)
-	);
-	if (hsp > 127.5) {
-		$(selector).addClass('dark-color');
-	} else {
-		$(selector).addClass('light-color');
-	}
-};
+		if (rgb.match(/^rgb/)) {
+			var a = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/),
+				r = a[1],
+				g = a[2],
+				b = a[3];
+		}
+		var hsp = Math.sqrt(
+			0.299 * (r * r) +
+			0.587 * (g * g) +
+			0.114 * (b * b)
+		);
+		if (hsp > 127.5) {
+			$(selector).addClass('dark-color');
+		} else {
+			$(selector).addClass('light-color');
+		}
+	};
 
 
 // HOME HERO SLIDER SLIDER
