@@ -112,119 +112,144 @@
 
 // DYNAMIC BACKGROUND COLOR SCRIPT
 // Credits: https://codepen.io/DevillersJerome/pen/bpLPGe
-	adaptColor('.inline-color-script');
+	var inlineColorscript = $('.inline-color-script');
+	if (inlineColorscript.length) {
+		adaptColor('.inline-color-script');
 
-	function adaptColor(selector) {
-		var rgb = $(selector).css("background-color");
+		function adaptColor(selector) {
+			var rgb = $(selector).css("background-color");
 
-		if (rgb.match(/^rgb/)) {
-			var a = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/),
-				r = a[1],
-				g = a[2],
-				b = a[3];
-		}
-		var hsp = Math.sqrt(
-			0.299 * (r * r) +
-			0.587 * (g * g) +
-			0.114 * (b * b)
-		);
-		if (hsp > 127.5) {
-			$(selector).addClass('dark-color');
-		} else {
-			$(selector).addClass('light-color');
-		}
-	};
+			if (rgb.match(/^rgb/)) {
+				var a = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/),
+					r = a[1],
+					g = a[2],
+					b = a[3];
+			}
+			var hsp = Math.sqrt(
+				0.299 * (r * r) +
+				0.587 * (g * g) +
+				0.114 * (b * b)
+			);
+			if (hsp > 127.5) {
+				$(selector).addClass('dark-color');
+			} else {
+				$(selector).addClass('light-color');
+			}
+		};
+	}
+
+
+// ACCORDION TABS
+	$(function() {
+		$(".tab-menu li a").click(function(event) {
+			event.preventDefault();
+			$(this).parent().addClass("active");
+			$(this).parent().siblings().removeClass("active");
+			var tab = $(this).attr("href");
+			$(".tab-content").not(tab).css({"display": "flex", "height": "0", "overflow": "hidden", "opacity" : "0"});
+			$(tab).css({"display": "flex", "height": "auto", "overflow": "auto", "opacity" : "1" });
+		});
+	});
+
+	$(".tab-content:first-child").css({"display": "flex"});
+	$(".tab-menu li:first-child").addClass("active");
 
 
 // HOME HERO SLIDER SLIDER
-	$('.slider-img').slick({
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		dots: true,
-		arrows: false,
-		fade: true,
-		adaptiveHeight: true
-	});
-
+	var hasSlider = $('.has-slider');
+	if (hasSlider.length) {
+		$('.slider-img').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			dots: true,
+			arrows: false,
+			fade: true,
+			adaptiveHeight: true
+		});
+	}
 
 // POSTS SLIDER
-	var $sliderPosts = $('.slider-posts');
-	if ($sliderPosts.length) {
-		var currentSlide;
-		var slidesCount;
-		var sliderCounter = document.createElement('div');
-		sliderCounter.classList.add('slider__counter');
+	if (hasSlider.length) {
+		var $sliderPosts = $('.slider-posts');
+		if ($sliderPosts.length) {
+			var currentSlide;
+			var slidesCount;
+			var sliderCounter = document.createElement('div');
+			sliderCounter.classList.add('slider__counter');
 
-		var updateSliderCounter = function(slick, currentIndex) {
-			currentSlide = slick.slickCurrentSlide() + 1;
-			slidesCount = slick.slideCount;
-			$(sliderCounter).html(currentSlide + ' / <span class="c-light-gray">' + slidesCount + '</span>');
-		};
+			var updateSliderCounter = function(slick, currentIndex) {
+				currentSlide = slick.slickCurrentSlide() + 1;
+				slidesCount = slick.slideCount;
+				$(sliderCounter).html(currentSlide + ' / <span class="c-light-gray">' + slidesCount + '</span>');
+			};
 
-		$sliderPosts.on('init', function(event, slick) {
-			$sliderPosts.append(sliderCounter);
-			updateSliderCounter(slick);
-			$(sliderCounter).html('1 / <span class="c-light-gray">1</span>');
+			$sliderPosts.on('init', function(event, slick) {
+				$sliderPosts.append(sliderCounter);
+				updateSliderCounter(slick);
+				$(sliderCounter).html('1 / <span class="c-light-gray">1</span>');
 
-		});
+			});
 
-		$sliderPosts.on('afterChange', function(event, slick, currentSlide) {
-			updateSliderCounter(slick, currentSlide);
-		});
+			$sliderPosts.on('afterChange', function(event, slick, currentSlide) {
+				updateSliderCounter(slick, currentSlide);
+			});
 
-		$sliderPosts.slick();
+			$sliderPosts.slick();
+		}
 	}
 
 
 // SLIDER POSTS
-	var $status = $('.custom_paging');
-	var $slickElement = $('.slider-post');
+	if (hasSlider.length) {
+		var $status = $('.custom_paging');
+		var $slickElement = $('.slider-post');
 
-	$slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-		//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-		if(!slick.$dots){
-			return;
-		}
+		$slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+			//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+			if(!slick.$dots){
+				return;
+			}
 
-		var i = (currentSlide ? currentSlide : 0) + 1;
-		$status.html('<span class="c-blue">' + i + '</span> / ' + (slick.$dots[0].children.length));
-	});
+			var i = (currentSlide ? currentSlide : 0) + 1;
+			$status.html('<span class="c-blue">' + i + '</span> / ' + (slick.$dots[0].children.length));
+		});
 
-	$slickElement.slick({
-		infinite: true,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		autoplay: true,
-		dots: true,
-		responsive: [
-			{
-				breakpoint: 2560,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1,
-					infinite: true,
-					dots: true
-				}
-			},
-			{
-				breakpoint: 1480,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					infinite: true,
-					dots: true
-				}
-			},
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					infinite: true,
-					dots: true,
-					arrows: false
-				}
-			},
-		]
-	});
+		$slickElement.slick({
+			infinite: true,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			autoplay: true,
+			dots: true,
+			responsive: [
+				{
+					breakpoint: 2560,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: true
+					}
+				},
+				{
+					breakpoint: 1480,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: true
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: true,
+						arrows: false
+					}
+				},
+			]
+		});
+	}

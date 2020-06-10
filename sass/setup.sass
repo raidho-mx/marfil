@@ -183,6 +183,17 @@ img
 		font-size: 36px
 		line-height: 43px
 
+.txt100
+	font-size: 100px
+	line-height: 110px
+	@media (max-width: $med_b)
+		font-size: 36px
+		line-height: 43px
+	@media (max-width: $tablet_b)
+		font-size: 24px
+		line-height: 29px
+
+
 =bg-img
 	background-repeat: no-repeat
 	background-size: cover
@@ -298,7 +309,7 @@ img
 	font-size: 18px
 	font-family: 'MonospaceBT-Bold'
 	min-width: 160px
-	padding: 17px 50px
+	padding: 12px 50px
 	text-decoration: none
 	@include transition (all ease 0.3s)
 	&:hover
@@ -335,6 +346,15 @@ img
 	&:hover
 		color: $c-white
 		background-color: $c-dark-gray
+
+.btn-border-black
+	background-color: $c-white
+	border: 3px solid $c-dark-gray!important
+	color: $c-dark-gray
+	&:hover
+		border: 3px solid $c-dark-gray!important
+		background-color: $c-dark-gray
+		color: $c-white!important
 
 input[type="text"],
 input[type="email"],

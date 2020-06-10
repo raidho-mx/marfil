@@ -369,17 +369,31 @@ header
 
 
 // TABS
+
+.tab
+	width: 100%
+
+.tab-content:first-child
+	opacity: 1
+	display: block
+	height: auto
+
+.tab-content
+	+transition(all 0.3s ease)
+	opacity: 0
+	height: 0
+	overflow: hidden
+
 .tab-menu
 	li
+		list-style: none
 		margin-right: 40px
 	li:last-child
 		margin-right: 0
-	li a.active
-		color: $c-green
-		text-decoration: underline
-
-.tab-content
-	width: 100%
+	li.active a
+		border: 3px solid $c-dark-gray!important
+		background-color: $c-dark-gray
+		color: $c-white!important
 
 .has-icon
 	position: relative
