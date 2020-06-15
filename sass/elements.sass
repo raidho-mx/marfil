@@ -482,6 +482,14 @@ header
 		+transform(translateY(-0.4rem))
 
 
+// ODD EVEN LIST
+.odd-even-list
+	&:nth-child(odd) .odd-even-element
+		justify-content: flex-end
+	&:nth-child(even) .odd-even-element
+		justify-content: flex-start
+
+
 // ANIMATIONS
 .has-fade
 	opacity: 0

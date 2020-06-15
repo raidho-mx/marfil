@@ -1794,6 +1794,13 @@ header .has-menu li {
   transform: translateY(-0.4rem);
 }
 
+.odd-even-list:nth-child(odd) .odd-even-element {
+  justify-content: flex-end;
+}
+.odd-even-list:nth-child(even) .odd-even-element {
+  justify-content: flex-start;
+}
+
 .has-fade {
   opacity: 0;
   -webkit-transition: all ease 0.6s;
