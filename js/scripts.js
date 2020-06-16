@@ -6,13 +6,16 @@
 
 // WINDOW SIZE
 	var header = $('header').outerHeight();
+	var finalHeaderHeight = "calc(100vh - " + header;
 	$('.hero-nav').css({'padding-top' : header}); // padding-top para el hero-nav
 	$('body').css({'top' : header}); // padding-top para el header
+	$('#heroImg').css({ 'height': 'calc(100vh - ' + header + 'px)' });
 
 	$(window).on('resize', function(){
 		var header = $('header').outerHeight();
 		$('.hero-nav').css({'padding-top' : header}); // padding-top para el hero-nav on resize
 		$('body').css({'top' : header}); // padding-top para el header
+		$('#heroImg').css({ 'height': 'calc(100vh - ' + header + 'px)' });
 	});
 
 	$('.homesvg').addClass('show');
