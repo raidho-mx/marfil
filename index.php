@@ -1,10 +1,24 @@
 <?php include('header.php'); ?>
 
-<section class="pt-100 pb-100">
+<!--<section class="pt-100 pb-100">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<p class="txt48">bloque de hero-img con gradient</p>
+			</div>
+		</div>
+	</div>
+</section>-->
+
+<!-- BLOQUE DE IMAGEN -->
+<section class="bg-gray">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 bg-img vh100 pl-5 pr-5 pb-100 d-flex align-items-end" style="background-image: url('img/13.jpg');">
+				<div class="mask-gradient-dark-gray"></div>
+				<div class="col-8 pl-5 pr-5 fade-in show delay4">
+					<h1 class="txt100 c-white is-bold">BIENVENIDO A LOS PATRONES</h1>
+				</div>
 			</div>
 		</div>
 	</div>
