@@ -19,12 +19,12 @@
 					</a>
 				</div>
 				<div class="has-menu ml-auto d-lg-flex d-none align-items-center">
-					<li><a href="" class="pl-3 pr-3 is-bold">Productos</a></li>
-					<li><a href="" class="pl-3 pr-3 is-bold">Familias</a></li>
-					<li><a href="" class="pl-3 pr-3 is-bold">Proyectos</a></li>
-					<li><a href="" class="pl-3 pr-3 is-bold">Colaboradores</a></li>
-					<li><a href="" class="pl-3 pr-3 is-bold">Acerca</a></li>
-					<li><a href="" class="pl-3 pr-3 is-bold">Contacto</a></li>
+					<li><a href="productos.php" class="pl-3 pr-3 is-bold">Productos</a></li>
+					<li><a href="familias.php" class="pl-3 pr-3 is-bold">Familias</a></li>
+					<li><a href="proyectos.php" class="pl-3 pr-3 is-bold">Proyectos</a></li>
+					<li><a href="colaboradores.php" class="pl-3 pr-3 is-bold">Colaboradores</a></li>
+					<li><a href="acerca.php" class="pl-3 pr-3 is-bold">Acerca</a></li>
+					<li><a href="contacto.php" class="pl-3 pr-3 is-bold">Contacto</a></li>
 				</div>
 				<div class="d-lg-none d-flex align-items-center ml-auto">
 					<div class="c-white triggerMenu animated-icon3 ml-auto" id="triggerMenu">
