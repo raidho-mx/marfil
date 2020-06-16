@@ -378,6 +378,15 @@ img {
   content: "";
 }
 
+.has-list-checkmark li:after {
+  content: url("../img/icon-checkmark-white.svg");
+  height: 17px;
+  width: 122px;
+}
+.has-list-checkmark li:last-child:after {
+  content: "";
+}
+
 .video-wrap {
   position: relative;
   padding-bottom: 66.25%;
