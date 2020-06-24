@@ -20,6 +20,9 @@
 .bg-light-gray
 	background-color: $c-light-gray
 
+.bg-lightest-gray
+	background-color: #F0F0F0
+
 .bg-green
 	background-color: $c-green
 
@@ -92,7 +95,7 @@
 
 // MASKS - GRADIENTS
 .mask-gradient-dark-gray
-	background: linear-gradient(0deg, $c-dark-gray 5%, rgba(0,0,0,0) 85%)
+	background: linear-gradient(0deg, $c-black 5%, rgba(0,0,0,0) 85%)
 	width: 100%
 	pointer-events: none
 	height: 100%
@@ -105,11 +108,15 @@
 
 // CONVERT HEX TO RGB CLASSES
 .dark-color
-	color: black
+	color: $c-dark-gray
 	&:hover
-		color: black
+		color: $c-dark-gray
+	a
+		color: $c-dark-gray!important
 
 .light-color
 	color: white
 	&:hover
 		color: white
+	a
+		color: $c-white!important

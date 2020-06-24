@@ -210,6 +210,12 @@ img
 .vh80
 	height: 80vh
 
+.vh50
+	height: 50vh
+
+.heroImg50
+	@media (max-width: $tablet_b)
+		height: auto!important
 
 .has-content
 	b, strong
@@ -234,7 +240,58 @@ img
 		@media (max-width: $tablet_b)
 			font-size: 18px
 			line-height: 24px
+	h1
+		font-size: 36px
+		line-height: 48px
+		@media (max-width: $med_b)
+			font-size: 32px
+			line-height: 44px
+		@media (max-width: $tablet_b)
+			font-size: 24px
+			line-height: 29px
+		@media (max-width: 600px)
+			font-size: 22px
+			line-height: 29px
 
+.has-gallery
+	li
+		padding-bottom: 30px
+	li:last-child
+		padding-bottom: 0
+	li:nth-child(3n+1)
+		padding-right: 15px
+		flex: 0 0 50%
+		max-width: 50%
+	li:nth-child(3n+2)
+		width: 50%
+		padding-left: 15px
+	@media (max-width: $tablet_b)
+		li
+			flex: 0 0 100%!important
+			max-width: 100%!important
+		li:nth-child(3n+1)
+			padding-right: 0
+		li:nth-child(3n+2)
+			padding-left: 0
+
+.has-order-odd-even:nth-child(odd)
+	.order-element
+		margin-left: auto
+	@media (max-width: $tablet_b)
+		.order-element
+			text-align: center
+			margin-right: auto
+			margin-left: auto
+
+
+.has-order-odd-even:nth-child(even)
+	.order-element
+		margin-right: auto
+	@media (max-width: $tablet_b)
+		.order-element
+			text-align: center
+			margin-right: auto
+			margin-left: auto
 
 .has-list-bullets
 	li:after
@@ -252,12 +309,16 @@ img
 		content: ''
 
 .has-list-checkmark
+	li
+		padding-left: 32px
+		position: relative
 	li:after
 		content: url('../img/icon-checkmark-white.svg')
 		height: 17px
 		width: 122px
-	li:last-child:after
-		content: ''
+		position: absolute
+		left: 0px
+		top: 3px
 
 .video-wrap
 	position: relative
@@ -317,7 +378,7 @@ img
 	font-size: 18px
 	font-family: 'MonospaceBT-Bold'
 	min-width: 160px
-	padding: 12px 50px
+	padding: 15px 45px
 	text-decoration: none
 	@include transition (all ease 0.3s)
 	&:hover
@@ -327,7 +388,7 @@ img
 	@media (max-width: $med_b)
 		line-height: 20px
 		font-size: 14px
-		padding: 9px 30px
+		padding: 14px 30px
 		min-width: 100px
 
 .has-sm-btn
@@ -356,13 +417,29 @@ img
 		background-color: $c-dark-gray
 
 .btn-border-black
-	background-color: $c-white
 	border: 3px solid $c-dark-gray!important
 	color: $c-dark-gray
+	padding: 12px 45px
 	&:hover
 		border: 3px solid $c-dark-gray!important
 		background-color: $c-dark-gray
 		color: $c-white!important
+
+.btn-border-white
+	background-color: rgba(0,0,0,0)
+	border: 3px solid $c-white!important
+	color: $c-white
+	padding: 12px 45px
+	&:hover
+		border: 3px solid $c-white!important
+		background-color: $c-white
+		color: $c-dark-gray!important
+
+.btn-border-white-no-hover
+	background-color: rgba(0,0,0,0)
+	border: 3px solid $c-white!important
+	color: $c-white
+	padding: 12px 45px
 
 input[type="text"],
 input[type="email"],

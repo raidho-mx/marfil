@@ -83,6 +83,17 @@
 	</div>
 </section>
 
+<!-- BLOQUE: MAIN TITLE -->
+<section class="bg-light-gray pt-md-5 pt-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="txt36 c-dark-gray"><strong>PROCESO</strong></h2>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- BLOQUE: IMG -->
 <section class="bg-light-gray pt-md-5 pt-3">
 	<div class="container">
@@ -119,8 +130,8 @@
 			<div class="col-12 mb-md-5 mb-3">
 				<h2 class="c-white text-uppercase txt36"><strong>Especificaciones<br> técnicas</strong></h2>
 			</div>
-			<div class="col-md-3">
-				<img src="img/producto-verde1.png" alt="">
+			<div class="col-md-2">
+				<img src="img/producto-verde2.png" alt="" class="max-w-110">
 			</div>
 			<div class="col-md-3">
 				<p class="c-dark-gray mb-3"><strong>MODELO LOUNGE</strong></p>

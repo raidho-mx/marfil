@@ -162,7 +162,7 @@ header
 		color: transparent
 		border: none
 		position: absolute
-		bottom: 0
+		top: 50%
 		height: 20px
 		width: 40px
 		z-index: 5
@@ -175,9 +175,9 @@ header
 			top: 0
 			right: 0
 		@media (min-width: $tablet_b)
-			left: 28px
+			left: -40px
 	.slick-next
-		left: 180px
+		right: -40px
 		&:after
 			content: url('../img/slider-arrow-right.svg')
 			position: absolute
@@ -330,6 +330,13 @@ header
 	@media (max-width: $phone_b)
 		padding-bottom: 100%
 
+.img-card-rectangle-x1
+	+bg-img
+	height: 500px
+	width: 100%
+	@media (max-width: $phone_b)
+		height: 300px
+
 .vh-80
 	height: 80vh
 
@@ -393,6 +400,17 @@ header
 	li:last-child
 		margin-right: 0
 	li.active a
+		border: 3px solid $c-dark-gray!important
+		background-color: $c-dark-gray
+		color: $c-white!important
+
+.tab-menu2
+	li
+		list-style: none
+		margin-right: 30px
+	li:last-child
+		margin-right: 0
+	li:hover a, li.active a
 		border: 3px solid $c-dark-gray!important
 		background-color: $c-dark-gray
 		color: $c-white!important
