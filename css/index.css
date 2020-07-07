@@ -639,7 +639,7 @@ input[type=text],
 input[type=email],
 input[type=number] {
   color: #000000;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: #FFFFFF;
   font-family: "MonospaceBT-Bold";
   border: none;
@@ -662,6 +662,13 @@ input[type=number] {
   }
 }
 
+.has-gray-placeholder {
+  color: #000000 !important;
+}
+.has-gray-placeholder::placeholder {
+  color: #9A9A9A !important;
+}
+
 .form-control:focus {
   color: #000000;
   background-color: #fff;
@@ -675,7 +682,7 @@ textarea {
 
 select {
   color: #000000;
-  border-radius: 5px !important;
+  border-radius: 0px !important;
   background-color: #FFFFFF;
   font-family: "MonospaceBT-Bold";
   border: none !important;
@@ -936,6 +943,10 @@ input[type=submit]:focus, input[type=submit]:hover {
   background-color: #DBD1CA;
 }
 
+.bg-D8D8D8 {
+  background-color: #D8D8D8;
+}
+
 .c-black {
   color: #000000;
 }
@@ -1030,6 +1041,23 @@ input[type=submit]:focus, input[type=submit]:hover {
 
 .bg-gradient-dark-gray {
   background: linear-gradient(0deg, #262626 10%, #FFFFFF 70%);
+}
+
+.green-mask {
+  background: rgba(88, 116, 88, 0.7) !important;
+}
+
+.dark-blue-mask {
+  background: rgba(0, 44, 102, 0.7) !important;
+}
+
+.dark-mask {
+  background: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .dark-color {
@@ -1380,19 +1408,6 @@ header .has-menu li {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.dark-blue-mask {
-  background: rgba(0, 44, 102, 0.7) !important;
-}
-
-.dark-mask {
-  background: rgba(0, 0, 0, 0.7);
-  pointer-events: none;
-  top: 0;
-  position: absolute;
-  height: 100%;
-  width: 100%;
 }
 
 .has-slider {
@@ -1832,6 +1847,10 @@ header .has-menu li {
   border: 3px solid #262626 !important;
   background-color: #262626;
   color: #FFFFFF !important;
+}
+
+.modal-content .close {
+  opacity: 1;
 }
 
 .has-icon {

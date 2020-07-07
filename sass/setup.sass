@@ -445,7 +445,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"]
 	color: $c-black
-	+border-radius(5px)
+	+border-radius(0px)
 	background-color: $c-white
 	font-family: 'MonospaceBT-Bold'
 	border: none
@@ -459,6 +459,11 @@ input[type="number"]
 		font-size: 16px
 		height: auto!important
 
+.has-gray-placeholder
+	color: $c-black!important
+	&::placeholder
+		color: #9A9A9A!important
+
 .form-control:focus
 	color: $c-black
 	background-color: #fff
@@ -470,7 +475,7 @@ textarea
 
 select
 	color: $c-black
-	+border-radius(5px!important)
+	+border-radius(0px!important)
 	background-color: $c-white
 	font-family: 'MonospaceBT-Bold'
 	border: none!important

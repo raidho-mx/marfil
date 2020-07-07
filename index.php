@@ -19,7 +19,7 @@
 		<div class="row">
 			<div class="col-12">
 				<h2 class="txt36 pb-md-5 pb-3"><strong>NUESTRO <br class="d-md-block d-none"><span class="c-green">CATÁLOGO</span></strong></h2>
-				<a href="#" class="has-btn bg-dark-gray">DESCARGAR</a>
+				<button class="has-btn bg-dark-gray c-white" data-toggle="modal" data-target="#ModalCatalogo" id="buttonCat">DESCARGAR</button>
 			</div>
 		</div>
 	</div>
@@ -122,5 +122,7 @@
 		</div>
 	</div>
 </section>
+
+<?php include('inc/modal-descargar-catalogo.php'); ?>
 
 <?php include('footer.php'); ?>
