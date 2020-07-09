@@ -111,10 +111,15 @@ header
 			left: 49px
 	.slick-dots
 		text-align: center
-		margin-top: 50px
+		position: absolute
+		left: 0
+		right: 0
+		margin: 0 auto
+		bottom: 30px
+		z-index: 99999
 		li
 			+border-radius(100%)
-			background-color: #D8D8D8
+			background-color: $c-white
 			display: inline-block
 			color: rgba(0,0,0,0)
 			margin-right: 15px
@@ -157,7 +162,12 @@ header
 	.slick-prev
 		left: 0px
 		&:after
-			content: url('../img/slider-arrow-left.svg')
+			content: ''
+			background-image: url(../img/slider-arrow-left.svg)
+			background-size: contain
+			width: 40px
+			height: 40px
+			background-repeat: no-repeat
 			position: absolute
 			left: 0
 			top: 0
@@ -167,7 +177,12 @@ header
 	.slick-next
 		right: -40px
 		&:after
-			content: url('../img/slider-arrow-right.svg')
+			content: ''
+			background-image: url(../img/slider-arrow-right.svg)
+			background-size: contain
+			width: 40px
+			height: 40px
+			background-repeat: no-repeat
 			position: absolute
 			left: 0
 			top: 0
@@ -178,6 +193,16 @@ header
 		.slick-next
 			right: 0
 			left: inherit
+		.slick-prev
+			left: -20px
+			&:after
+				width: 20px
+				height: 20px
+		.slick-next
+			right: -40px
+			&:after
+				width: 20px
+				height: 20px
 
 .has-blue-arrows
 	margin-bottom: 0!important
@@ -220,11 +245,11 @@ header
 
 .slider-img
 	width: 100%
+	padding-left: 30px
+	padding-right: 30px
+	padding-top: 30px
 	.slick-list
 		@include box-shadow (0 4px 20px 0 rgba(0,0,0,0.2))
-		+border-radius(8px)
-		img
-			+border-radius(8px)
 
 .cards-slider
 	.slick-list
@@ -384,9 +409,7 @@ header
 .tab-menu
 	li
 		list-style: none
-		margin-right: 40px
-	li:last-child
-		margin-right: 0
+		margin-right: 25px
 	li.active a
 		border: 3px solid $c-dark-gray!important
 		background-color: $c-dark-gray
@@ -395,13 +418,15 @@ header
 .tab-menu2
 	li
 		list-style: none
-		margin-right: 30px
-	li:last-child
-		margin-right: 0
+		margin-right: 25px
 	li:hover a, li.active a
 		border: 3px solid $c-dark-gray!important
 		background-color: $c-dark-gray
 		color: $c-white!important
+
+.has-overflow-y
+	overflow-x: auto
+	white-space: nowrap
 
 // MODAL
 .modal-content .close
